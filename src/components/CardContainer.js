@@ -12,19 +12,9 @@ class CardContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-     // selectedCard: ""
-      //cards:[]
   }
     }
   
-    // toggle() {
-    //   this.setState({addClass: !this.state.addClass});
-    // }
-    // let stepCardContainer = ["step-card-container"];
-    // if(this.state.addClass) {
-    //   stepCardContainer.push('display');
-    // }
-
   render() {
     const {
       answers,

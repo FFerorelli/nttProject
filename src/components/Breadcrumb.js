@@ -1,33 +1,25 @@
-import React from 'react';
-import '../style/chip.css';
-import Chip from './Chip'
-import axios from 'axios';
-
-
+import React from "react";
+import "../style/chip.css";
+import Chip from "./Chip";
+import axios from "axios";
 
 class BreadCrumb extends React.Component {
-    render () {
-      const {
-        steps,
-        activeIndex
-      } = this.props;
-  
-      const chips = steps
-        .map((step,index) => {
+  render() {
+    const { steps, activeIndex } = this.props;
 
-          return <Chip 
-                  key={index} 
-                  title={step.category} 
-                  onClick = {()=> this.props.selectChip(index)} 
-                  active={activeIndex >= index} />
-              })
-  
+    const chips = steps.map((step, index) => {
       return (
-        <div className="chip-container">
-            {chips}
-        </div>
-      )
-    }
-  }
+        <Chip
+          key={index}
+          title={step.category}
+          onClick={() => this.props.selectChip(index)}
+          active={activeIndex >= index}
+        />
+      );
+    });
 
-  export default BreadCrumb;
+    return <div className="chip-container">{chips}</div>;
+  }
+}
+
+export default BreadCrumb;
