@@ -16,7 +16,7 @@ class App extends React.Component {
       steps: [],
       results: [],
       tree: undefined,
-      complete: false,
+      completed: false,
       selectedAnswers: [],
       activeIndex: 0
     };
@@ -26,11 +26,12 @@ class App extends React.Component {
 
   selectChip(chipIndex) {
     const remainingAnswers = this.state.selectedAnswers.slice(0, chipIndex);
-    this.setState({
+    if (this.state.activeIndex !== this.state.steps.length ) {
+      this.setState({
       activeIndex: chipIndex,
       selectedAnswers: remainingAnswers
     });
-    console.log(remainingAnswers);
+    }    
   }
 
   selectCard = i => {

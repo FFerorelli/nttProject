@@ -1,12 +1,11 @@
 import React from "react";
-import axios from "axios";
 import img from "../../src/assets/img/attivita_1.jpg";
 import "../style/result.css";
 
 class Results extends React.Component {
   render() {
     const { treeResult, results } = this.props;
-    console.log(treeResult)
+    console.log(treeResult);
     const selectedResultsFilter = results.filter(r => {
       if (!treeResult) {
         return false;
@@ -15,7 +14,6 @@ class Results extends React.Component {
     });
     const renderMap = selectedResultsFilter.map(res => (
       <div className="finalCard">
-        <h1>ecco cosa abbiamo trovato per te</h1>
         <div className="resultDesktop">
           <div className="results" key={res.id}>
             <div className="resultTitle">
@@ -38,7 +36,12 @@ class Results extends React.Component {
         </div>
       </div>
     ));
-    return <div>{renderMap}</div>;
+    return (
+      <div>
+        <h1>ecco cosa abbiamo trovato per te</h1>
+        <div>{renderMap}</div>;
+      </div>
+    );
   }
 }
 
